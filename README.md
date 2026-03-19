@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# YouTube Thumbnail Preview
 
-First, run the development server:
+A Next.js project that demonstrates a YouTube-style video thumbnail preview. Upload a video, and as you hover over the progress bar, a floating thumbnail appears, just like on YouTube.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Video Upload:** Upload any video file via a simple UI.
+- **Automatic Sprite Sheet Generation:** The backend uses FFmpeg to extract thumbnails and create a sprite sheet (storyboard).
+- **YouTube-style Preview:** Hovering over the video progress bar shows a floating thumbnail preview.
+- **Custom Video Player:** Responsive player with progress bar and preview overlay.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## How It Works
 
-To learn more about Next.js, take a look at the following resources:
+1. **Upload:** Use the upload button to select a video file.
+2. **Processing:** The `/api/upload` endpoint saves the video and uses FFmpeg to generate a sprite sheet.
+3. **Preview:** The player loads the video and storyboard, showing a thumbnail preview as you hover over the progress bar.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Components & APIs
 
-## Deploy on Vercel
+- **components/upload-button.tsx**: Handles file input and upload, calls the API, and passes results to the player.
+- **components/youtube-player.tsx**: Custom video player with progress bar and floating thumbnail preview.
+- **app/api/upload/route.ts**: API endpoint for video upload and FFmpeg processing.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Installation & Setup
+
+1. **Clone the repository:**
+	```bash
+	git clone <repo-url>
+	cd youtube-thumbnail-preview
+	```
+2. **Install dependencies:**
+	```bash
+	npm install
+	# or
+	yarn install
+	```
+3. **Install FFmpeg:**
+	- macOS: `brew install ffmpeg`
+	- Ubuntu: `sudo apt install ffmpeg`
+	- FFmpeg must be available in your system PATH.
+4. **Run the development server:**
+	```bash
+	npm run dev
+	# or
+	yarn dev
+	```
+5. **Open your browser:**
+	- Visit [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Usage
+
+1. Click the **UPLOAD VIDEO** button and select a video file.
+2. Wait for processing (UI will indicate progress).
+3. Hover over the video progress bar to see the floating thumbnail preview.
+
+---
+
+## Credits
+
+- Built with [Next.js](https://nextjs.org)
+- Uses [FFmpeg](https://ffmpeg.org) for video processing
+- Inspired by YouTube’s video preview UI

@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  next-app:
+    build: .
+    container_name: youtube-preview-app
+    ports:
+      - "3000:3000"
+    volumes:
+      # เชื่อมโฟลเดอร์เก็บวิดีโอ/รูปภาพ เพื่อไม่ให้หายเวลา Restart Container
+      - ./public/storage:/app/public/storage
+      # เชื่อมโค้ด (เผื่อใช้ในโหมด Development)
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=production
+    restart: always
