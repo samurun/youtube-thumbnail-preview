@@ -1,10 +1,9 @@
 # 🎬 YouTube Thumbnail Preview Generator
 
-[Demo](public/demo.mp4)
+[Demo](public/demo.gif)
 
 <!-- หรือแสดงวิดีโอใน GitHub (บางเบราว์เซอร์รองรับ) -->
-<video src="public/demo.mp4" controls width="600"></video>
-
+<image src="public/demo.gif" controls width="600" />
 ---
 
 ## ✨ Features
