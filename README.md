@@ -1,6 +1,9 @@
 # 🎬 YouTube Thumbnail Preview Generator
 
-โปรเจกต์จำลองระบบ **Thumbnail Scrubbing** แบบ YouTube โดยใช้ **Next.js App Router** ร่วมกับ **FFmpeg** เพื่อสร้าง Sprite Sheet (Storyboard) จากวิดีโอที่อัปโหลดโดยอัตโนมัติ
+[Demo](public/demo.mp4)
+
+<!-- หรือแสดงวิดีโอใน GitHub (บางเบราว์เซอร์รองรับ) -->
+<video src="public/demo.mp4" controls width="600"></video>
 
 ---
 
@@ -38,3 +41,4 @@ cd youtube-thumbnail-preview
 
 # 2. รันด้วย Docker Compose
 docker-compose up --build
+```
